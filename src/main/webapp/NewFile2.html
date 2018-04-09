@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	video{
+		background:white;
+		color:yellow;
+		}
+	body{
+	background:black}
+</style>
+<script type="text/javascript">
+	window.onload = function(){
+		
+		if (navigator.geolocation){alert("gongxini")}
+		document.getElementById("beginpaint").addEventListener("click",function(){
+			var canvasObj=document.getElementById("can");
+			var ctx=canvasObj.getContext("2d");
+			ctx.save();
+			ctx.beginPath();
+			ctx.translate(50,50);
+			ctx.moveTo(50,50);
+			ctx.lineTo(150,50);
+			ctx.lineTo(150,100);
+			ctx.lineTo(50,100);
+		ctx.closePath();
+			ctx.stroke();
+			ctx.restore();
+		},false);
+		
+	}
+</script>
+</head>
+<body>
+
+<video id="vid" src="22.mp4"  controls></video>
+</body>
+</html>
